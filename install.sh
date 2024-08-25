@@ -63,7 +63,7 @@ install_dotfiles() {
     fi
 
     # init ohmyzsh
-    _init_ohmyzsh()
+    _init_ohmyzsh
 
     # Install config.
     for dots_home in "${dotfiles_home_dir[@]}"
