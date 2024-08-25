@@ -24,7 +24,7 @@ EOF
 }
 
 _init_ohmyzsh() {
-    sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)" \
+    sh .oh-my-zsh/install.sh \
         && source $HOME/.zshrc \
         && .oh-my-zsh/install_ohmyzsh_custom.sh
 }
