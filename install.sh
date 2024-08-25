@@ -6,7 +6,8 @@ white='\e[0;37m'
 dotfiles_repo_dir=$(pwd)
 backup_dir="$HOME/.dotfiles.orig"
 dotfiles_home_dir=(.zsh .aliases .bash_profile .bashrc .dircolors .editorconfig
-                   .functions .gemrc .ripgreprc .wgetrc .Xresources .zshrc .tmux.conf)
+                   .functions .gemrc .ripgreprc .wgetrc .Xresources .zshrc .tmux.conf
+                   .condarc)
 dotfiles_xdg_config_dir=(.alacritty .dunst .htop .i3 .i3blocks .picom .rofi .tmux)
 
 # Print usage message.
@@ -25,10 +26,9 @@ EOF
 
 _init_ohmyzsh() {
     if ! [ -d "$HOME/.oh-my-zsh" ]; then
-        sh .oh-my-zsh/install.sh \
-            && source $HOME/.zshrc \
-            && .oh-my-zsh/install_ohmyzsh_custom.sh
+        sh .oh-my-zsh/install.sh
     fi
+    ZSH="${HOME}/.oh-my-zsh" ${dotfiles_repo_dir}/.oh-my-zsh/custom/install_ohmyzsh_custom.sh
 }
 
 install_dotfiles() {
