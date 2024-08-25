@@ -24,9 +24,9 @@ EOF
 }
 
 _init_ohmyzsh() {
-    sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
-    source $HOME/.zshrc
-    .oh-my-zsh/install_ohmyzsh_custom.sh
+    sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)" \
+        && source $HOME/.zshrc \
+        && .oh-my-zsh/install_ohmyzsh_custom.sh
 }
 
 install_dotfiles() {
