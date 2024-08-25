@@ -24,9 +24,11 @@ EOF
 }
 
 _init_ohmyzsh() {
-    sh .oh-my-zsh/install.sh \
-        && source $HOME/.zshrc \
-        && .oh-my-zsh/install_ohmyzsh_custom.sh
+    if ! [ -d "$HOME/.oh-my-zsh" ]; then
+        sh .oh-my-zsh/install.sh \
+            && source $HOME/.zshrc \
+            && .oh-my-zsh/install_ohmyzsh_custom.sh
+    fi
 }
 
 install_dotfiles() {
