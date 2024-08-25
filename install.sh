@@ -23,6 +23,12 @@ Options:
 EOF
 }
 
+_init_ohmyzsh() {
+    sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+    source $HOME/.zshrc
+    .oh-my-zsh/install_ohmyzsh_custom.sh
+}
+
 install_dotfiles() {
     # Backup config.
     if ! [ -f "$backup_dir/check-backup.txt" ]; then
@@ -55,6 +61,9 @@ install_dotfiles() {
         echo -e "${red}Please do not delete check-backup.txt in .dotfiles.orig folder.${white}" >&2
         echo -e "It's used to backup and restore your old config.\n" >&2
     fi
+
+    # init ohmyzsh
+    _init_ohmyzsh()
 
     # Install config.
     for dots_home in "${dotfiles_home_dir[@]}"
