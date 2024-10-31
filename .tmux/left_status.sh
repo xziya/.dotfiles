@@ -43,7 +43,7 @@ function memory_usage() {
         usedG=$(bc -l <<< "$used / 1024")
         totalG=$(bc -l <<< "$total / 1024")
         # Feed the variables into awk and print the values with formating.
-        awk -v u=$usedG -v t=$totalG -v p=$percent 'BEGIN {printf "MEM:%.1f% ", p}'
+        awk -v u=$usedG -v t=$totalG -v p=$percent 'BEGIN {printf "mem:%.1f% ", p}'
 
     fi
 
