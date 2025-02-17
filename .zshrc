@@ -122,4 +122,4 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 # Local config
-[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+if [ -f ~/.zshrc.local ]; then source ~/.zshrc.local; fi
