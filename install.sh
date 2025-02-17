@@ -7,7 +7,7 @@ dotfiles_repo_dir=$(pwd)
 backup_dir="$HOME/.dotfiles.orig"
 dotfiles_home_dir=(.zsh .aliases .bash_profile .bashrc .dircolors .editorconfig
                    .functions .gemrc .ripgreprc .wgetrc .Xresources .zshrc .tmux.conf
-                   .condarc)
+                   .condarc .config/nvim)
 dotfiles_xdg_config_dir=(.alacritty .dunst .htop .i3 .i3blocks .picom .rofi .tmux)
 
 # Print usage message.
