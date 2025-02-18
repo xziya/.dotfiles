@@ -8,5 +8,5 @@
 	path = .oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
 [submodule ".config/nvim"]
-	path = .config/nvim
+	path = nvim
 	url = https://github.com/xziya/nvim.git
