@@ -10,6 +10,9 @@ if [ -d "$ZSH" ]; then
             # Create symlinks in custom plugins directory
             if [ -d "$dir/plugins" ]; then
                 for plugin in "$dir/plugins"/*; do
+                    if [ -L "$ZSH/custom/plugins/$(basename "$plugin")" ]; then
+                        continue
+                    fi
                     if [ -d "$plugin" ]; then
                         ln -s "$plugin" "$ZSH/custom/plugins/$(basename "$plugin")"
                     fi
